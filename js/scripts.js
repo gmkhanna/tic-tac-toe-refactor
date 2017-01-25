@@ -1,49 +1,68 @@
+var x = [];
+var o = [13,23,21];
 
+player = [];
 
+winCombos = [[11,12,13],[21,22,23],[31,32,33],[11,21,31],[12,22,32],[13,23,33],[11,22,33],[13,22,31]];
 
-
-
+function arrayCheck(player) {
+  counter = 0;
+  for ( i=0; i<player.length; i++ )
+  {
+    for ( j=0; j<winCombos[i].length; j++ )
+    {
+      if (player[i] = winCombos[j][i]) {
+        counter += 1;
+        alert(counter);
+      } else
+      alert('test');
+    }
+  }
+}
 
 
 
 $(document).ready(function(){
 
     $("#x11").click(function(){
+        x.push(11)
         $("#o11").hide();
         $("#x11").animate({
-
             height: '100%',
             width: '100%'
         });
+        arrayCheck(x);
     });
     $("#o11").click(function(){
+        o.push(11)
         $("#x11").hide();
         $("#o11").animate({
-
             height: '100%',
             width: '100%'
         });
+        arrayCheck(o);
     });
     $("#x12").click(function(){
+        x.push(12)
         $("#o12").hide();
         $("#x12").animate({
-
             height: '100%',
             width: '100%'
         });
+        alert(x);
     });
     $("#o12").click(function(){
+        o.push(12)
         $("#x12").hide();
         $("#o12").animate({
-
             height: '100%',
             width: '100%'
         });
+        alert(o);
     });
     $("#x13").click(function(){
         $("#o13").hide();
         $("#x13").animate({
-
             height: '100%',
             width: '100%'
         });
@@ -51,7 +70,6 @@ $(document).ready(function(){
     $("#o13").click(function(){
         $("#x13").hide();
         $("#o13").animate({
-
             height: '100%',
             width: '100%'
         });
@@ -61,7 +79,6 @@ $(document).ready(function(){
     $("#x21").click(function(){
         $("#o21").hide();
         $("#x21").animate({
-
             height: '100%',
             width: '100%'
         });
@@ -69,7 +86,6 @@ $(document).ready(function(){
     $("#o21").click(function(){
         $("#x21").hide();
         $("#o21").animate({
-
             height: '100%',
             width: '100%'
         });
@@ -77,7 +93,6 @@ $(document).ready(function(){
     $("#x22").click(function(){
         $("#o22").hide();
         $("#x22").animate({
-
             height: '100%',
             width: '100%'
         });
@@ -85,7 +100,6 @@ $(document).ready(function(){
     $("#o22").click(function(){
         $("#x22").hide();
         $("#o22").animate({
-
             height: '100%',
             width: '100%'
         });
@@ -93,7 +107,6 @@ $(document).ready(function(){
     $("#x23").click(function(){
         $("#o23").hide();
         $("#x23").animate({
-
             height: '100%',
             width: '100%'
         });
@@ -101,7 +114,6 @@ $(document).ready(function(){
     $("#o23").click(function(){
         $("#x23").hide();
         $("#o23").animate({
-
             height: '100%',
             width: '100%'
         });
@@ -111,7 +123,6 @@ $(document).ready(function(){
     $("#x31").click(function(){
         $("#o31").hide();
         $("#x31").animate({
-
             height: '100%',
             width: '100%'
         });
@@ -119,7 +130,6 @@ $(document).ready(function(){
     $("#o31").click(function(){
         $("#x31").hide();
         $("#o31").animate({
-
             height: '100%',
             width: '100%'
         });
@@ -127,7 +137,6 @@ $(document).ready(function(){
     $("#x32").click(function(){
         $("#o32").hide();
         $("#x32").animate({
-
             height: '100%',
             width: '100%'
         });
@@ -135,7 +144,6 @@ $(document).ready(function(){
     $("#o32").click(function(){
         $("#x32").hide();
         $("#o32").animate({
-
             height: '100%',
             width: '100%'
         });
@@ -143,7 +151,6 @@ $(document).ready(function(){
     $("#x33").click(function(){
         $("#o33").hide();
         $("#x33").animate({
-
             height: '100%',
             width: '100%'
         });
@@ -151,7 +158,6 @@ $(document).ready(function(){
     $("#o33").click(function(){
         $("#x33").hide();
         $("#o33").animate({
-
             height: '100%',
             width: '100%'
         });
