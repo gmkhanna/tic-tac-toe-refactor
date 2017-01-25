@@ -1,0 +1,23 @@
+.container {
+  background-color: black;
+}
+
+.jumbotron {
+  text-align: center;
+}
+
+.col-md-4 {
+  height: 300px;
+  border-right: solid black 7px;
+  border-left: solid black 7px;
+}
+
+.col-md-9 {
+  border: solid black 3px;
+}
+
+#side {
+  background-color: grey;
+  height: 950px;
+  border-right: solid black 10px;
+}
