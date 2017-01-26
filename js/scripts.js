@@ -1,21 +1,42 @@
 var x = [];
-var o = [13,23,21];
-
-player = [];
+var o = [];
 
 winCombos = [[11,12,13],[21,22,23],[31,32,33],[11,21,31],[12,22,32],[13,23,33],[11,22,33],[13,22,31]];
 
+// function arrayCheck(player) {
+//   counter = 0;
+//   for ( i=0; i<player.length; i++ )
+//   {
+//     for ( j=0; j<winCombos[i].length; j++ )
+//     {
+//       if (player[i] = winCombos[j][i]) {
+//         counter += 1;
+//         console.log();
+//       } else {
+//       }
+//     }
+//   }
+// }
+
 function arrayCheck(player) {
-  counter = 0;
-  for ( i=0; i<player.length; i++ )
-  {
-    for ( j=0; j<winCombos[i].length; j++ )
-    {
-      if (player[i] = winCombos[j][i]) {
-        counter += 1;
-        alert(counter);
-      } else
-      alert('test');
+  for ( i=0; i<winCombos.length; i++ ) {
+    console.log("i = " + i);
+    for ( j=0; j<winCombos[i].length; j++ ) {
+      counter = 0;
+      for ( var k = 0; k<player.length; k++) {
+        if (player[k] === winCombos[i][j]) {
+          counter += 1;
+          if (counter === 3) {
+            alert("winner");
+          }
+
+          console.log("I FOUND ONE");
+          // console.log(counter);
+        } else {
+          console.log('not found');
+        }
+      }
+      console.log(counter);
     }
   }
 }
@@ -25,7 +46,7 @@ function arrayCheck(player) {
 $(document).ready(function(){
 
     $("#x11").click(function(){
-        x.push(11)
+        x.push(11,12,13)
         $("#o11").hide();
         $("#x11").animate({
             height: '100%',
