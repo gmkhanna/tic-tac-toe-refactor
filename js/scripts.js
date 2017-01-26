@@ -1,42 +1,37 @@
 var x = [];
 var o = [];
 
-winCombos = [[11,12,13],[21,22,23],[31,32,33],[11,21,31],[12,22,32],[13,23,33],[11,22,33],[13,22,31]];
+var winCombos = [[11,12,13],[21,22,23],[31,32,33],[11,21,31],[12,22,32],[13,23,33],[11,22,33],[13,22,31]];
 
-// function arrayCheck(player) {
-//   counter = 0;
-//   for ( i=0; i<player.length; i++ )
-//   {
-//     for ( j=0; j<winCombos[i].length; j++ )
-//     {
-//       if (player[i] = winCombos[j][i]) {
-//         counter += 1;
-//         console.log();
-//       } else {
-//       }
-//     }
-//   }
-// }
 
-function arrayCheck(player) {
+function checkX() {
   for ( i=0; i<winCombos.length; i++ ) {
-    console.log("i = " + i);
+    counter = 0;
     for ( j=0; j<winCombos[i].length; j++ ) {
-      counter = 0;
-      for ( var k = 0; k<player.length; k++) {
-        if (player[k] === winCombos[i][j]) {
+      for ( var k = 0; k<x.length; k++) {
+        if (x[k] === winCombos[i][j]) {
           counter += 1;
           if (counter === 3) {
             alert("winner");
           }
-
-          console.log("I FOUND ONE");
-          // console.log(counter);
-        } else {
-          console.log('not found');
         }
       }
-      console.log(counter);
+    }
+  }
+}
+
+function checkO() {
+  for ( i=0; i<winCombos.length; i++ ) {
+    counter = 0;
+    for ( j=0; j<winCombos[i].length; j++ ) {
+      for ( var k = 0; k<o.length; k++) {
+        if (o[k] === winCombos[i][j]) {
+          counter += 1;
+          if (counter === 3) {
+            alert("winner");
+          }
+        }
+      }
     }
   }
 }
@@ -46,13 +41,13 @@ function arrayCheck(player) {
 $(document).ready(function(){
 
     $("#x11").click(function(){
-        x.push(11,12,13)
+        x.push(11)
         $("#o11").hide();
         $("#x11").animate({
             height: '100%',
             width: '100%'
         });
-        arrayCheck(x);
+        checkX();
     });
     $("#o11").click(function(){
         o.push(11)
@@ -61,7 +56,7 @@ $(document).ready(function(){
             height: '100%',
             width: '100%'
         });
-        arrayCheck(o);
+        checkO();
     });
     $("#x12").click(function(){
         x.push(12)
@@ -70,7 +65,7 @@ $(document).ready(function(){
             height: '100%',
             width: '100%'
         });
-        alert(x);
+        checkX();
     });
     $("#o12").click(function(){
         o.push(12)
@@ -82,106 +77,134 @@ $(document).ready(function(){
         alert(o);
     });
     $("#x13").click(function(){
+        x.push(13)
         $("#o13").hide();
         $("#x13").animate({
             height: '100%',
             width: '100%'
         });
+        checkX();
     });
     $("#o13").click(function(){
+        o.push(13)
         $("#x13").hide();
         $("#o13").animate({
             height: '100%',
             width: '100%'
         });
+        checkO();
     });
 // END --- of the first row; START second Row
 
     $("#x21").click(function(){
+        x.push(21)
         $("#o21").hide();
         $("#x21").animate({
             height: '100%',
             width: '100%'
         });
+        checkX();
     });
     $("#o21").click(function(){
+        o.push(21)
         $("#x21").hide();
         $("#o21").animate({
             height: '100%',
             width: '100%'
         });
+        checkO();
     });
     $("#x22").click(function(){
+        x.push(22)
         $("#o22").hide();
         $("#x22").animate({
             height: '100%',
             width: '100%'
         });
+        checkX();
     });
     $("#o22").click(function(){
+        o.push(22)
         $("#x22").hide();
         $("#o22").animate({
             height: '100%',
             width: '100%'
         });
+        checkO();
     });
     $("#x23").click(function(){
+        x.push(23)
         $("#o23").hide();
         $("#x23").animate({
             height: '100%',
             width: '100%'
         });
+        checkX();
     });
     $("#o23").click(function(){
+        o.push(23)
         $("#x23").hide();
         $("#o23").animate({
             height: '100%',
             width: '100%'
         });
+        checkO();
     });
 // End of the second row --- Begin third Row
 
     $("#x31").click(function(){
+        x.push(31)
         $("#o31").hide();
         $("#x31").animate({
             height: '100%',
             width: '100%'
         });
+        checkX();
     });
     $("#o31").click(function(){
+        o.push(31)
         $("#x31").hide();
         $("#o31").animate({
             height: '100%',
             width: '100%'
         });
+        checkO();
     });
     $("#x32").click(function(){
+        x.push(32)
         $("#o32").hide();
         $("#x32").animate({
             height: '100%',
             width: '100%'
         });
+        checkX();
     });
     $("#o32").click(function(){
+        o.push(32)
         $("#x32").hide();
         $("#o32").animate({
             height: '100%',
             width: '100%'
         });
+        checkO();
     });
     $("#x33").click(function(){
+        x.push(33)
         $("#o33").hide();
         $("#x33").animate({
             height: '100%',
             width: '100%'
         });
+        checkX();
     });
     $("#o33").click(function(){
+        o.push(33)
         $("#x33").hide();
         $("#o33").animate({
             height: '100%',
             width: '100%'
         });
+        checkO();
     });
 
 });
