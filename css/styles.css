@@ -27,5 +27,15 @@
 img {
   width: 30px;
   height: 30px;
+}
 
+button {
+  position: absolute;;
+  top: 90%;
+  left: 40%;
+}
+
+.choose {
+  border: solid black 3px;
+  background-color: aliceblue;
 }

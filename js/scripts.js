@@ -33,7 +33,11 @@ var switchPlayer = function() {
   }
 }
 
-$(document).ready(function(){
+function reset() {
+  location.reload();
+}
+
+$(document).ready(function() {
 
   $("#x1").click(function(){
     currentPlayer = playerX;
