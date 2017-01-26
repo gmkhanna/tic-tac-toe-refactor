@@ -24,15 +24,14 @@ Player.prototype.check = function() {
 var playerX = new Player("x");
 var playerO = new Player("o");
 var currentPlayer = playerO;
-var nextPlayer;
+// var nextPlayer;
 
-Player.prototype.switchPlayer = function(currentPlayer) {
+var switchPlayer = function() {
   if (currentPlayer.symbol === "o") {
     currentPlayer = playerX;
   } else {
     currentPlayer = playerO;
   }
-  return currentPlayer;
 }
 
 $(document).ready(function(){
@@ -45,166 +44,95 @@ $(document).ready(function(){
             width: '100%',
         });
         currentPlayer.check();
-        nextPlayer = currentPlayer.switchPlayer(currentPlayer);
-        $("#" + nextPlayer.symbol + "11").hide();
+        switchPlayer();
+        $("#" + currentPlayer.symbol + "11").hide();
     });
-    // $("#sq12").click(function(){
-    //     currentPlayer.choices.push(12)
-    //     $("#" + currentPlayer.symbol + "12").animate({
-    //         height: '100%',
-    //         width: '100%'
-    //     });
-    //     currentPlayer.check();
-    //     currentPlayer = player2;
-    //     $("#" + currentPlayer.symbol + "12").hide();
-    // });
-//     $("#x12").click(function(){
-//         x.push(12)
-//         $("#o12").hide();
-//         $("#x12").animate({
-//             height: '100%',
-//             width: '100%'
-//         });
-//         checkX();
-//     });
-//     $("#o12").click(function(){
-//         o.push(12)
-//         $("#x12").hide();
-//         $("#o12").animate({
-//             height: '100%',
-//             width: '100%'
-//         });
-//         alert(o);
-//     });
-//     $("#x13").click(function(){
-//         x.push(13)
-//         $("#o13").hide();
-//         $("#x13").animate({
-//             height: '100%',
-//             width: '100%'
-//         });
-//         checkX();
-//     });
-//     $("#o13").click(function(){
-//         o.push(13)
-//         $("#x13").hide();
-//         $("#o13").animate({
-//             height: '100%',
-//             width: '100%'
-//         });
-//         checkO();
-//     });
-// // END --- of the first row; START second Row
-//
-//     $("#x21").click(function(){
-//         x.push(21)
-//         $("#o21").hide();
-//         $("#x21").animate({
-//             height: '100%',
-//             width: '100%'
-//         });
-//         checkX();
-//     });
-//     $("#o21").click(function(){
-//         o.push(21)
-//         $("#x21").hide();
-//         $("#o21").animate({
-//             height: '100%',
-//             width: '100%'
-//         });
-//         checkO();
-//     });
-//     $("#x22").click(function(){
-//         x.push(22)
-//         $("#o22").hide();
-//         $("#x22").animate({
-//             height: '100%',
-//             width: '100%'
-//         });
-//         checkX();
-//     });
-//     $("#o22").click(function(){
-//         o.push(22)
-//         $("#x22").hide();
-//         $("#o22").animate({
-//             height: '100%',
-//             width: '100%'
-//         });
-//         checkO();
-//     });
-//     $("#x23").click(function(){
-//         x.push(23)
-//         $("#o23").hide();
-//         $("#x23").animate({
-//             height: '100%',
-//             width: '100%'
-//         });
-//         checkX();
-//     });
-//     $("#o23").click(function(){
-//         o.push(23)
-//         $("#x23").hide();
-//         $("#o23").animate({
-//             height: '100%',
-//             width: '100%'
-//         });
-//         checkO();
-//     });
-// // End of the second row --- Begin third Row
-//
-//     $("#x31").click(function(){
-//         x.push(31)
-//         $("#o31").hide();
-//         $("#x31").animate({
-//             height: '100%',
-//             width: '100%'
-//         });
-//         checkX();
-//     });
-//     $("#o31").click(function(){
-//         o.push(31)
-//         $("#x31").hide();
-//         $("#o31").animate({
-//             height: '100%',
-//             width: '100%'
-//         });
-//         checkO();
-//     });
-//     $("#x32").click(function(){
-//         x.push(32)
-//         $("#o32").hide();
-//         $("#x32").animate({
-//             height: '100%',
-//             width: '100%'
-//         });
-//         checkX();
-//     });
-//     $("#o32").click(function(){
-//         o.push(32)
-//         $("#x32").hide();
-//         $("#o32").animate({
-//             height: '100%',
-//             width: '100%'
-//         });
-//         checkO();
-//     });
-//     $("#x33").click(function(){
-//         x.push(33)
-//         $("#o33").hide();
-//         $("#x33").animate({
-//             height: '100%',
-//             width: '100%'
-//         });
-//         checkX();
-//     });
-//     $("#o33").click(function(){
-//         o.push(33)
-//         $("#x33").hide();
-//         $("#o33").animate({
-//             height: '100%',
-//             width: '100%'
-//         });
-//         checkO();
-//     });
 
+    $("#sq12").click(function(){
+        currentPlayer.choices.push(12)
+        $("#" + currentPlayer.symbol + "12").animate({
+            height: '100%',
+            width: '100%',
+        });
+        currentPlayer.check();
+        switchPlayer();
+        $("#" + currentPlayer.symbol + "12").hide();
+    });
+
+    $("#sq13").click(function(){
+        currentPlayer.choices.push(13)
+        $("#" + currentPlayer.symbol + "13").animate({
+            height: '100%',
+            width: '100%',
+        });
+        currentPlayer.check();
+        switchPlayer();
+        $("#" + currentPlayer.symbol + "13").hide();
+    });
+
+    $("#sq21").click(function(){
+        currentPlayer.choices.push(21)
+        $("#" + currentPlayer.symbol + "21").animate({
+            height: '100%',
+            width: '100%',
+        });
+        currentPlayer.check();
+        switchPlayer();
+        $("#" + currentPlayer.symbol + "21").hide();
+    });
+
+    $("#sq22").click(function(){
+        currentPlayer.choices.push(22)
+        $("#" + currentPlayer.symbol + "22").animate({
+            height: '100%',
+            width: '100%',
+        });
+        currentPlayer.check();
+        switchPlayer();
+        $("#" + currentPlayer.symbol + "22").hide();
+    });
+
+    $("#sq23").click(function(){
+        currentPlayer.choices.push(23)
+        $("#" + currentPlayer.symbol + "23").animate({
+            height: '100%',
+            width: '100%',
+        });
+        currentPlayer.check();
+        switchPlayer();
+        $("#" + currentPlayer.symbol + "23").hide();
+    });
+
+    $("#sq31").click(function(){
+        currentPlayer.choices.push(31)
+        $("#" + currentPlayer.symbol + "31").animate({
+            height: '100%',
+            width: '100%',
+        });
+        currentPlayer.check();
+        switchPlayer();
+        $("#" + currentPlayer.symbol + "31").hide();
+    });
+
+    $("#sq32").click(function(){
+        currentPlayer.choices.push(32)
+        $("#" + currentPlayer.symbol + "32").animate({
+            height: '100%',
+            width: '100%',
+        });
+        currentPlayer.check();
+        switchPlayer();
+        $("#" + currentPlayer.symbol + "32").hide();
+    });
+
+    $("#sq33").click(function(){
+        currentPlayer.choices.push(33)
+        $("#" + currentPlayer.symbol + "33").animate({
+            height: '100%',
+            width: '100%',
+        });
+        currentPlayer.check();
+        switchPlayer();
+        $("#" + currentPlayer.symbol + "33").hide();
+    });
 });
