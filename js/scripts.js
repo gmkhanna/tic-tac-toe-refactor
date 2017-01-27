@@ -14,19 +14,19 @@ Player.prototype.check = function() {
         if (this.choices[k] === winCombos[i][j]) {
           counter += 1;
           if (counter === 3) {
-            alert("winner");
+            return true;
           }
         }
       }
     }
   }
 }
-var playerX = new Player("x");
-var playerO = new Player("o");
+var playerX = new Player("X");
+var playerO = new Player("O");
 var currentPlayer;
 
 var switchPlayer = function() {
-  if (currentPlayer.symbol === "o") {
+  if (currentPlayer.symbol === "O") {
     currentPlayer = playerX;
   } else {
     currentPlayer = playerO;
@@ -39,29 +39,29 @@ function reset() {
 
 $(document).ready(function() {
 
-  $("#x1").click(function(){
+  $("#X1").click(function(){
     currentPlayer = playerX;
-    $("#o1").hide();
-    $("#x1").animate({
+    $("#O1").hide();
+    $("#X1").animate({
       height: '10%',
       width: '40%',
     });
-    $("#x2").hide();
-    $("#o2").animate({
+    $("#X2").hide();
+    $("#O2").animate({
       height: '10%',
       width: '40%',
     });
   });
 
-  $("#o1").click(function(){
+  $("#O1").click(function(){
     currentPlayer = playerO;
-    $("#x1").hide();
-    $("#o1").animate({
+    $("#X1").hide();
+    $("#O1").animate({
       height: '10%',
       width: '40%',
     });
-    $("#o2").hide();
-    $("#x2").animate({
+    $("#O2").hide();
+    $("#X2").animate({
       height: '10%',
       width: '40%',
     });
@@ -73,7 +73,9 @@ $(document).ready(function() {
       height: '100%',
       width: '100%',
     });
-    currentPlayer.check();
+    if (currentPlayer.check() === true) {
+      $('#winner').text(currentPlayer.symbol + ' is the Winner!');
+    }
     switchPlayer();
     $("#" + currentPlayer.symbol + "11").hide();
   });
@@ -84,7 +86,9 @@ $(document).ready(function() {
       height: '100%',
       width: '100%',
     });
-    currentPlayer.check();
+    if (currentPlayer.check() === true) {
+      $('#winner').text(currentPlayer.symbol + ' is the Winner!');
+    }
     switchPlayer();
     $("#" + currentPlayer.symbol + "12").hide();
   });
@@ -95,7 +99,9 @@ $(document).ready(function() {
       height: '100%',
       width: '100%',
     });
-    currentPlayer.check();
+    if (currentPlayer.check() === true) {
+      $('#winner').text(currentPlayer.symbol + ' is the Winner!');
+    }
     switchPlayer();
     $("#" + currentPlayer.symbol + "13").hide();
   });
@@ -106,7 +112,9 @@ $(document).ready(function() {
       height: '100%',
       width: '100%',
     });
-    currentPlayer.check();
+    if (currentPlayer.check() === true) {
+      $('#winner').text(currentPlayer.symbol + ' is the Winner!');
+    }
     switchPlayer();
     $("#" + currentPlayer.symbol + "21").hide();
   });
@@ -117,7 +125,9 @@ $(document).ready(function() {
       height: '100%',
       width: '100%',
     });
-    currentPlayer.check();
+    if (currentPlayer.check() === true) {
+      $('#winner').text(currentPlayer.symbol + ' is the Winner!');
+    }
     switchPlayer();
     $("#" + currentPlayer.symbol + "22").hide();
   });
@@ -128,7 +138,9 @@ $(document).ready(function() {
       height: '100%',
       width: '100%',
     });
-    currentPlayer.check();
+    if (currentPlayer.check() === true) {
+      $('#winner').text(currentPlayer.symbol + ' is the Winner!');
+    }
     switchPlayer();
     $("#" + currentPlayer.symbol + "23").hide();
   });
@@ -139,7 +151,9 @@ $(document).ready(function() {
       height: '100%',
       width: '100%',
     });
-    currentPlayer.check();
+    if (currentPlayer.check() === true) {
+      $('#winner').text(currentPlayer.symbol + ' is the Winner!');
+    }
     switchPlayer();
     $("#" + currentPlayer.symbol + "31").hide();
   });
@@ -150,7 +164,9 @@ $(document).ready(function() {
       height: '100%',
       width: '100%',
     });
-    currentPlayer.check();
+    if (currentPlayer.check() === true) {
+      $('#winner').text(currentPlayer.symbol + ' is the Winner!');
+    }
     switchPlayer();
     $("#" + currentPlayer.symbol + "32").hide();
   });
@@ -161,7 +177,9 @@ $(document).ready(function() {
       height: '100%',
       width: '100%',
     });
-    currentPlayer.check();
+    if (currentPlayer.check() === true) {
+      $('#winner').text(currentPlayer.symbol + ' is the Winner!');
+    }
     switchPlayer();
     $("#" + currentPlayer.symbol + "33").hide();
   });

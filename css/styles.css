@@ -39,3 +39,13 @@ button {
   border: solid black 3px;
   background-color: aliceblue;
 }
+
+#winner {
+  z-index: 1;
+  position: absolute;
+  top: 80%;
+  font-size: 30px;
+  color: yellow;
+  left: 80%;
+  text-shadow: 1px 1px 50px purple;
+}
